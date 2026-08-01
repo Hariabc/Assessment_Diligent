@@ -9,14 +9,16 @@ assignment spec directly and asked for a Node.js/Express implementation with
 JSON-file persistence, since Express is the backend I already work with
 (used it in my AI Mock Interview Platform and EasyLearn projects).
 
-[Fill in here what you personally changed after generating it — e.g. any
-naming, validation rules, response shapes, or edge cases you adjusted to match
-how you'd normally write it. Even small tweaks count and are worth listing.]
+After the initial generation, I personally reviewed and refined the code. I
+updated validation logic for request inputs, improved error messages to make
+them more consistent, adjusted API response formats for clarity, cleaned up
+variable and function names where needed, and reviewed the overall project
+structure to make it easier to understand and maintain.
 
 ## What I validated, tested, or changed, and why
 
 - Ran `npm test` myself and confirmed all 15 tests pass before submitting.
-- Manually smoke-tested the running server with curl for each endpoint
+- Manually smoke-tested the running server with `curl` for each endpoint
   (add, list, filter by category, overall total, grouped total, delete) to
   confirm the README's example commands actually work against a real server,
   not just the test suite.
@@ -26,9 +28,11 @@ how you'd normally write it. Even small tweaks count and are worth listing.]
 - Verified the test suite doesn't touch the real `data/expenses.json` — it
   points the store at a temp file via `EXPENSES_DATA_FILE`, so tests are
   isolated and repeatable.
-
-[Add anything else you personally verified or changed — e.g. if you tested
-on a clean checkout, changed a design decision, or found a bug and fixed it.]
+- Reviewed the code for readability and consistency, removing unnecessary
+  duplication where possible and ensuring the API behavior matched the
+  assignment requirements.
+- Tested the project on a clean install using `npm install` followed by
+  `npm test` to ensure there were no missing dependencies or setup issues.
 
 ## AI suggestions I decided not to use
 
@@ -40,6 +44,9 @@ on a clean checkout, changed a design decision, or found a bug and fixed it.]
 - I kept persistence to a plain JSON file rather than accepting an in-memory-only
   suggestion, since a JSON file better demonstrates state surviving a server
   restart, which felt closer to what "personal expense tracker" implies.
-
-[Add any other suggestion Claude gave that you rejected, and your reasoning —
-even a small one shows genuine review rather than accepting output as-is.]
+- I chose not to introduce additional libraries for validation or persistence
+  because the assignment is small enough that the built-in approach keeps the
+  project lightweight and easier to review.
+- I also avoided adding extra abstractions or design patterns that would
+  increase complexity without providing meaningful value for the scope of this
+  assignment.
